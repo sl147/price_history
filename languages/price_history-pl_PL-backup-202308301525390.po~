@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Price history\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-02 10:19+0000\n"
-"PO-Revision-Date: 2023-08-30 15:25+0000\n"
+"PO-Revision-Date: 2023-08-30 15:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -144,7 +144,7 @@ msgstr "cena promocyjna"
 #: includes/class-price_history_view.php:43
 #: includes/class-price_history_view_order1.php:30
 msgid "regular price"
-msgstr "regularna cena"
+msgstr "normalna cena"
 
 #: settings/sl147_class_settings.php:236 settings/sl147_class_settings.php:237
 #: settings/sl147_class_settings1.php:324

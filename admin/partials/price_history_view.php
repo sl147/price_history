@@ -42,7 +42,7 @@
 					<thead>
 						<tr>
 							<?php for ($i = 0; $i < count($this->arr_th); $i++) :?>
-								<th><?php $this->sl147_PH_display_text( $this->arr_th[$i])?></th>
+								<th><?php echo $this->arr_th[$i]?></th>
 							<?php endfor;?>
 						</tr>						
 					</thead>

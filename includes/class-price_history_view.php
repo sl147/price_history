@@ -152,30 +152,6 @@ private function sl147_get_products() :object{
 		}
 		return (array) $array_output;
 	}
-	/**
-	 * callback function for uasort().
-	 *
-	 * @since 1.1
-	 *
-	 * @return int
-	 */
-	private function sl147_PH_list_sort($a, $b) :int {
-		return (int) ($a['product_name'] > $b['product_name']);
-	}
-
-	/**
-	 * display text in the <table>.
-	 *
-	 * @since 1.1
-	 * 
-	 * @param string $text text to display
-	 * 
-	 * @return void
-	 */
-
-	private function sl147_PH_display_text(string $text) :void {
-		echo __( $text, 'price_history' );
-	}
 
 	/**
 	 * get products from BD .
@@ -207,9 +183,6 @@ private function sl147_get_products() :object{
 		if ($product_ID > 1) $sql .= " WHERE ID_product=".$product_ID;	
 
 		$array_output = $this->sl147_PH_array_prepare($wpdb->get_results($sql));
-		//uasort($array_output, array($this, 'sl147_PH_list_sort'));
-
-//$arr_temp = $this->sl147_get_products_ID($this->product_ID);
 		$array_output = $this->sl147_PH_data_sort( $array_output, array(
 			'product_name' => 'desc',
 			'date_change'  => 'asc') );
@@ -278,42 +251,6 @@ function sl147_PH_data_sort( $array, $args ) { //= array('votes' => 'desc') ){
 	return $array;
 }
 
-/*
- * Сортировка массива по двум параметрам с помощью usort()
- */
-function sl147_PH_data_sort1($a, $b){
-	// поля по которым сортировать
-	$array = array( 'product_name'=>'desc', 'date_change'=>'asc' );
-
-	$res = 0;
-	foreach( $array as $k=>$v ){
-		if( $a->$k == $b->$k ) continue;
-
-		$res = ( $a->$k < $b->$k ) ? -1 : 1;
-		if( $v=='desc' ) $res= -$res;
-		break;
-	}
-
-	return $res;
-}
-
-	/**
-	 * forms a new arr_price with category 
-	 *
-	 * @param array $arr_temp array with category
-	 * 
-	 * @return void
-	 */
-	private function sl147_forms_new_arr_price(array $arr_temp) :void{
-		unset($this->arr_price);
-		
-		/*$arr = $this->sl147_PH_data_sort( $arr_temp, array(
-			'product_name' => 'desc',
-			'date_change'  => 'ASC') );*/
-		//$arr = uasort($arr_temp, array($this, 'sl147_PH_data_sort1')); //desc asc
-		$this->arr_price = $arr_temp;
-	}
-
 	/**
 	 * add category to arr_price
 	 * 
@@ -322,19 +259,17 @@ function sl147_PH_data_sort1($a, $b){
 	 * @return void
 	 */
 
-	private function sl147_add_category ( int $product_ID) :void {
-		
+	private function sl147_add_category ( int $product_ID) :void {		
 		$arr_temp = [];
-
 		foreach ($this->arr_price as $value) {
 			$cat_names           = $this->sl147_get_category_names( ( $product_ID == 1) ? $value['ID_product'] : $product_ID );
-
 			$value['id']         = $product_ID;
 			$value['category']   = $cat_names;
 			$value['cat_select'] = (strpos($cat_names, $this->sl147_category) === false) ? false : true;
 			array_push($arr_temp, $value);			
 		}
-		$this->sl147_forms_new_arr_price($arr_temp);
+		unset($this->arr_price);
+		$this->arr_price = $arr_temp;
 	}
 
 	/**
@@ -351,12 +286,6 @@ function sl147_PH_data_sort1($a, $b){
 		$this->product_ID       = $product_ID;
 		$this->product_name     = $this->sl147_PH_name_product_to_display($this->product_ID);
 		$this->arr_price        = $this->sl147_get_products_ID($this->product_ID);
-
-		/*$arr_temp = $this->sl147_get_products_ID($this->product_ID);
-		$arr = $this->sl147_PH_data_sort( $arr_temp, array(
-			'product_name' => 'desc',
-			'date_change'  => 'desc') );
-		$this->arr_price = $arr;*/
 		$this->product_selected = true;
 		$this->sl147_add_category($this->product_ID);
 	}
@@ -373,7 +302,7 @@ function sl147_PH_data_sort1($a, $b){
 
 		$this->product_selected = false;
 		$all_products           = $this->sl147_PH_get_all_products($this->sl147_get_products());
-		$delete_button = __('Delete this price', 'price_history');
+		$delete_button          = __('Delete this price', 'price_history');
 		if ( get_option( $this->sl147_settings_bd ) ) {
 			foreach (get_option($this->sl147_settings_bd) as $key =>$option) {
 				if ($key == 'sl147_option_color') $option_color = $option;
@@ -391,10 +320,9 @@ function sl147_PH_data_sort1($a, $b){
 		if( wp_verify_nonce( $_POST['nonce_PH'], 'nonce_action_PH' )) {
 			$this->sl147_set_data(intval($_POST['product_id']));
 		}
-
-		$delete_err = 0;
+		
 		if( wp_verify_nonce( $_POST['nonce_field_delete'], 'nonce_delete_action' )) {
-
+			$delete_err = 0;
 			if ($this->sl147_PH_delete_post(intval($_POST['id_post']))) {
 				$this->sl147_set_data(intval($_POST['product_id_del']));
 				$price        = floatval($_POST['product_price']);
@@ -405,6 +333,6 @@ function sl147_PH_data_sort1($a, $b){
 			}
 		}
 
-		require_once (PRICE_HISTORY_PLUGIN_DIR_PATH . 'admin/partials/price_history_view.php');  
+		require_once (PRICE_HISTORY_PLUGIN_DIR_PATH . 'admin/partials/price_history_view.php');
 	}
 }
