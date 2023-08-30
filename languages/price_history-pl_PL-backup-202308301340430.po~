@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Price history\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-02 10:19+0000\n"
-"PO-Revision-Date: 2023-08-30 13:40+0000\n"
+"PO-Revision-Date: 2023-08-30 13:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.4; wp-6.3.1\n"
+"X-Loco-Version: 2.6.4; wp-6.2.2\n"
 "X-Domain: price_history"
 
 #. Description of the plugin
@@ -55,7 +55,7 @@ msgstr "prawidłowo usunięte dla produktu"
 
 #: includes/class-price_history_settings.php:86
 msgid "Customizing of price history output"
-msgstr "Ustawienie wyników historii cen"
+msgstr "Dostosowywanie wyników historii cen"
 
 #: includes/class-price_history_view.php:14
 msgid "Date of change"
@@ -94,11 +94,11 @@ msgstr "Brak historii cen dla"
 
 #: includes/class-price_history_settings.php:88
 msgid "Output settings minimum price on products page"
-msgstr "Ustawienia ceny minimalnej na stronie produktów"
+msgstr "Ustawienia wyjściowe ceny minimalnej na stronie produktów"
 
 #: includes/class-price_history_settings.php:87
 msgid "Output settings minimum price on sigle product page"
-msgstr "Ustawienia ceny minimalnej na stronie pojedynczego produktu"
+msgstr "Ustawienia wyjściowe ceny minimalnej na stronie pojedynczego produktu"
 
 #: includes/class-price_history_view.php:13
 #: admin/partials/price_history_view.php:36

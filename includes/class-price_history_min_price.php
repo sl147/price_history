@@ -36,7 +36,7 @@ class Sl147_price_history_min_price {
 
 	    $css   = get_option('sl147_bd_' . PRICE_HISTORY_TEXT_DOMAIN);
 	    $color = ( is_product() ) ? $css['price_color_single'] : $css['price_color_loop'];
-	    $echo  = '<div style="color:'. $color .'">' . __('Lowest price in the last 30 days', 'price_history' );
+	    $echo  = '<div style="font-size:12px; color:'. $color .'">' . __('Lowest price in the last 30 days', 'price_history' );
 	    $echo .= ( is_product() ) ? '<span style="font-size: '. $css['price_font_single']. 'px"> ' : '<div style="font-size:' . $css['price_font_loop'] . 'px" >';
 	    $echo .= number_format( $this->sl147_get_min_price_last_30_days($product->get_id()), 2 ) . ' ' . get_woocommerce_currency_symbol();
 	    $echo .= ( is_product() ) ? '</span>' : '</div>'; 
