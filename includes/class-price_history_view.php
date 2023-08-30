@@ -9,13 +9,14 @@ class Sl147_price_history_view {
 		$this->table     = $wpdb->prefix . 'sl147_price_history';
 		$this->arr_th    = [
 			__( 'Product',        'price_history' ),
-			__( 'Category',        'price_history' ),
+			__( 'Category',       'price_history' ),
 			__( 'Price',          'price_history' ),
 			__( 'Date of change', 'price_history' ),
 			__( 'Price type',     'price_history' ),
 			__( 'User',           'price_history' ),
 		];
 		$this->arr_td            = ['product_name', 'category', 'product_price', 'date_change', 'type_price', 'user'];
+		$this->arr_td_style      = ['left', 'center', 'right', 'center', 'center', 'center'];
 		$this->arr_class         = ['text-left', 'text-center', 'text-right', 'text-center', 'text-center', 'text-center'];
 		$this->product_selected  = false;
 		$this->product_ID        = 1;
@@ -372,19 +373,19 @@ function sl147_PH_data_sort1($a, $b){
 
 		$this->product_selected = false;
 		$all_products           = $this->sl147_PH_get_all_products($this->sl147_get_products());
-	
+		$delete_button = __('Delete this price', 'price_history');
 		if ( get_option( $this->sl147_settings_bd ) ) {
 			foreach (get_option($this->sl147_settings_bd) as $key =>$option) {
-				if ($key == 'sl147_option_color') $val = $option;
-				if ($key == 'sl147_option_font')  $font_size = $option."px";
+				if ($key == 'sl147_option_color') $option_color = $option;
+				if ($key == 'sl147_option_font')  $font_size    = $option."px";
 				if ($key == 'sl147_option_category') {
 					$sl147_cat  = get_term_by( 'id', $option, 'product_cat');
 					$this->sl147_category  = $sl147_cat->name;
 				}
 			}
 		}else{
-			$val       = "red";
-			$font_size = "16px";
+			$option_color = "red";
+			$font_size    = "16px";
 		}
 
 		if( wp_verify_nonce( $_POST['nonce_PH'], 'nonce_action_PH' )) {
@@ -406,5 +407,4 @@ function sl147_PH_data_sort1($a, $b){
 
 		require_once (PRICE_HISTORY_PLUGIN_DIR_PATH . 'admin/partials/price_history_view.php');  
 	}
-
 }

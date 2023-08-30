@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Price history\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-30 15:15+0000\n"
+"POT-Creation-Date: 2023-08-30 12:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -21,13 +21,13 @@ msgid ""
 "<code><strong>Price history</strong></code>Price history for all products."
 msgstr ""
 
-#: includes/class-price_history_view.php:25
+#: includes/class-price_history_view.php:24
 #: includes/class-price_history_view_order1.php:103
 #: includes/class-price_history_view_order1.php:171
 msgid "All products"
 msgstr ""
 
-#: admin/partials/price_history_view.php:21
+#: admin/partials/price_history_view.php:28
 msgid "an error occurred while deleting the price"
 msgstr ""
 
@@ -36,23 +36,19 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: admin/partials/price_history_view.php:37
+#: admin/partials/price_history_view.php:56
 msgid "Change history for all products"
 msgstr ""
 
-#: admin/partials/price_history_view.php:4
+#: admin/partials/price_history_view.php:8
 msgid "Choose a product"
-msgstr ""
-
-#: admin/partials/price_history_view.php:13
-msgid "click to display price history"
 msgstr ""
 
 #: includes/class-price_history_settings.php:23
 msgid "Color"
 msgstr ""
 
-#: admin/partials/price_history_view.php:25
+#: admin/partials/price_history_view.php:36
 msgid "correctly removed for the product"
 msgstr ""
 
@@ -62,10 +58,6 @@ msgstr ""
 
 #: includes/class-price_history_view.php:14
 msgid "Date of change"
-msgstr ""
-
-#: includes/class-price_history_view.php:376
-msgid "Delete this price"
 msgstr ""
 
 #: settings/sl147_class_settings.php:26
@@ -90,11 +82,11 @@ msgstr ""
 msgid "Lowest price in the last 30 days"
 msgstr ""
 
-#: admin/partials/price_history_view.php:14
+#: admin/partials/price_history_view.php:18
 msgid "NEXT"
 msgstr ""
 
-#: admin/partials/price_history_view.php:32
+#: admin/partials/price_history_view.php:48
 msgid "No price history for"
 msgstr ""
 
@@ -103,11 +95,11 @@ msgid "Output settings minimum price on products page"
 msgstr ""
 
 #: includes/class-price_history_settings.php:87
-msgid "Output settings minimum price on single product page"
+msgid "Output settings minimum price on sigle product page"
 msgstr ""
 
 #: includes/class-price_history_view.php:13
-#: admin/partials/price_history_view.php:25
+#: admin/partials/price_history_view.php:36
 msgid "Price"
 msgstr ""
 
@@ -129,16 +121,16 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: admin/partials/price_history_view.php:37
+#: admin/partials/price_history_view.php:56
 msgid "Product price change history for"
 msgstr ""
 
-#: includes/class-price_history_view.php:44
+#: includes/class-price_history_view.php:43
 #: includes/class-price_history_view_order1.php:31
 msgid "promotional price"
 msgstr ""
 
-#: includes/class-price_history_view.php:43
+#: includes/class-price_history_view.php:42
 #: includes/class-price_history_view_order1.php:30
 msgid "regular price"
 msgstr ""

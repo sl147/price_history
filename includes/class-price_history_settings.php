@@ -84,7 +84,7 @@ class Sl147_PH_options{
 		
 		$value_sections = [
 			'admin'        => __('Customizing of price history output', 'price_history' ),
-			'front_single' => __('Output settings minimum price on sigle product page', 'price_history' ),
+			'front_single' => __('Output settings minimum price on single product page', 'price_history' ),
 			'front_loop'   => __('Output settings minimum price on products page', 'price_history' )
 		];
 		require_once PRICE_HISTORY_PLUGIN_DIR_PATH . 'settings/sl147_class_settings.php';

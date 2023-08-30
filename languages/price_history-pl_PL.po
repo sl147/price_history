@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Price history\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-02 10:19+0000\n"
-"PO-Revision-Date: 2023-08-30 13:40+0000\n"
+"PO-Revision-Date: 2023-08-30 15:16+0000\n"
 "Last-Translator: \n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -22,13 +22,13 @@ msgid ""
 msgstr ""
 "<code><strong>Historia cen</strong></code>Historia cen wszystkich produktów."
 
-#: includes/class-price_history_view.php:24
+#: includes/class-price_history_view.php:25
 #: includes/class-price_history_view_order1.php:103
 #: includes/class-price_history_view_order1.php:171
 msgid "All products"
 msgstr "Wszystkie produkty"
 
-#: admin/partials/price_history_view.php:28
+#: admin/partials/price_history_view.php:21
 msgid "an error occurred while deleting the price"
 msgstr "wystąpił błąd podczas usuwania ceny"
 
@@ -37,19 +37,23 @@ msgstr "wystąpił błąd podczas usuwania ceny"
 msgid "Category"
 msgstr "Kategoria"
 
-#: admin/partials/price_history_view.php:56
+#: admin/partials/price_history_view.php:37
 msgid "Change history for all products"
-msgstr "Zmień historię dla wszystkich produktów"
+msgstr "Historia zmian dla wszystkich produktów"
 
-#: admin/partials/price_history_view.php:8
+#: admin/partials/price_history_view.php:4
 msgid "Choose a product"
 msgstr "Wybierz produkt"
+
+#: admin/partials/price_history_view.php:13
+msgid "click to display price history"
+msgstr "kliknij, aby wyświetlić historię cen"
 
 #: includes/class-price_history_settings.php:23
 msgid "Color"
 msgstr "Kolor"
 
-#: admin/partials/price_history_view.php:36
+#: admin/partials/price_history_view.php:25
 msgid "correctly removed for the product"
 msgstr "prawidłowo usunięte dla produktu"
 
@@ -60,6 +64,10 @@ msgstr "Ustawienie wyników historii cen"
 #: includes/class-price_history_view.php:14
 msgid "Date of change"
 msgstr "Data zmiany"
+
+#: includes/class-price_history_view.php:376
+msgid "Delete this price"
+msgstr "Usuń tę cenę"
 
 #: settings/sl147_class_settings.php:26
 msgid ""
@@ -84,11 +92,11 @@ msgstr "https://www.vaolab.pl"
 msgid "Lowest price in the last 30 days"
 msgstr "Najniższa cena z ostatnich 30 dni"
 
-#: admin/partials/price_history_view.php:18
+#: admin/partials/price_history_view.php:14
 msgid "NEXT"
 msgstr "DALEJ"
 
-#: admin/partials/price_history_view.php:48
+#: admin/partials/price_history_view.php:32
 msgid "No price history for"
 msgstr "Brak historii cen dla"
 
@@ -97,11 +105,12 @@ msgid "Output settings minimum price on products page"
 msgstr "Ustawienia ceny minimalnej na stronie produktów"
 
 #: includes/class-price_history_settings.php:87
-msgid "Output settings minimum price on sigle product page"
+#| msgid "Output settings minimum price on sigle product page"
+msgid "Output settings minimum price on single product page"
 msgstr "Ustawienia ceny minimalnej na stronie pojedynczego produktu"
 
 #: includes/class-price_history_view.php:13
-#: admin/partials/price_history_view.php:36
+#: admin/partials/price_history_view.php:25
 msgid "Price"
 msgstr "Cena"
 
@@ -123,16 +132,16 @@ msgstr "Rodzaj ceny"
 msgid "Product"
 msgstr "Produkt"
 
-#: admin/partials/price_history_view.php:56
+#: admin/partials/price_history_view.php:37
 msgid "Product price change history for"
 msgstr "Historia zmian cen produktów dla"
 
-#: includes/class-price_history_view.php:43
+#: includes/class-price_history_view.php:44
 #: includes/class-price_history_view_order1.php:31
 msgid "promotional price"
 msgstr "cena promocyjna"
 
-#: includes/class-price_history_view.php:42
+#: includes/class-price_history_view.php:43
 #: includes/class-price_history_view_order1.php:30
 msgid "regular price"
 msgstr "normalna cena"

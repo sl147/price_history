@@ -6,3 +6,67 @@
 	margin-left: -10px;
 	padding-left: 10px;
 }
+.sl147_ph_8 {
+	margin-left:8.3%;
+	width:66.6%;
+	display:flex;
+	justify-content: center;
+    align-items: center;
+}
+.sl147_ph_10 {
+	margin-left:8.3%;
+	margin-right:8.3%;
+	display:flex;
+	justify-content: center;
+    align-items: center;
+}
+.sl147_btn {
+	cursor:pointer;
+	padding: .25rem .5rem;
+	margin-left:1%;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+	color:#fff;
+	background-color: #0069d9;
+    border-color: #0062cc;
+}
+.sl147_label{
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+	margin-right:1%;
+}
+.sl147_table{
+	border: 1px solid #dee2e6;
+	width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+	border-collapse: collapse;
+	font-size: 14px;
+}
+.sl147_tr {
+	font-size: 14px;
+	text-align:center;
+	border: 1px solid #dee2e6;
+}
+.sl147_table tbody tr td, .sl147_table thead tr th{
+	border: 1px solid #dee2e6;
+	padding-top:0.75rem;
+	padding-bottom:0.75rem;
+}
+.sl147_table tbody tr:hover {
+    color: #212529;
+    background-color: #dee2e6;
+}
+.sl147_notice{
+	font-size:16px;
+	text-align:center;
+}
+.sl147_notice span {
+	font-size: 24px;
+	color: red;
+	padding-right: 10px;
+}
