@@ -225,24 +225,21 @@ private function sl147_get_products() :object{
 	}
 
 
-function sl147_PH_data_sort( $array, $args ) { //= array('votes' => 'desc') ){
-	usort( $array, function( $a, $b ) use ( $args ){
+function sl147_PH_data_sort( array $array, array $args ) {
+	usort( $array, function( $el1, $el2 ) use ( $args ){
 		$res = 0;
-
-		$a = (object) $a;
-		$b = (object) $b;
+		$el1 = (object) $el1;
+		$el2 = (object) $el2;
 
 		foreach( $args as $k => $v ){
-			if( $a->$k == $b->$k ) continue;
+			if( $el1->$k == $el2->$k ) continue;
 
-			$res = ( $a->$k < $b->$k ) ? 1 : -1;
+			$res = ( $el1->$k < $el2->$k ) ? 1 : -1;
 			if( $v=='desc' ) $res= -$res;
 			break;
 		}
-
 		return $res;
 	} );
-
 	return $array;
 }
 
