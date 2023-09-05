@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Price history\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 13:58+0000\n"
+"POT-Creation-Date: 2023-08-30 15:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -21,7 +21,9 @@ msgid ""
 "<code><strong>Price history</strong></code>Price history for all products."
 msgstr ""
 
-#: includes/class-price_history_view.php:24
+#: includes/class-price_history_view.php:25
+#: includes/class-price_history_view_order1.php:103
+#: includes/class-price_history_view_order1.php:171
 msgid "All products"
 msgstr ""
 
@@ -62,7 +64,7 @@ msgstr ""
 msgid "Date of change"
 msgstr ""
 
-#: includes/class-price_history_view.php:299
+#: includes/class-price_history_view.php:376
 msgid "Delete this price"
 msgstr ""
 
@@ -84,7 +86,7 @@ msgstr ""
 msgid "https://www.vaolab.pl"
 msgstr ""
 
-#: includes/class-price_history_min_price.php:10
+#: includes/class-price_history_min_price.php:39
 msgid "Lowest price in the last 30 days"
 msgstr ""
 
@@ -131,20 +133,20 @@ msgstr ""
 msgid "Product price change history for"
 msgstr ""
 
-#: includes/class-price_history_view.php:28
+#: includes/class-price_history_view.php:44
+#: includes/class-price_history_view_order1.php:31
 msgid "promotional price"
 msgstr ""
 
-#: includes/class-price_history_view.php:27
+#: includes/class-price_history_view.php:43
+#: includes/class-price_history_view_order1.php:30
 msgid "regular price"
 msgstr ""
 
 #: settings/sl147_class_settings.php:236 settings/sl147_class_settings.php:237
+#: settings/sl147_class_settings1.php:324
+#: settings/sl147_class_settings1.php:325
 msgid "Settings"
-msgstr ""
-
-#: settings/sl147_class_settings.php:260
-msgid "Settings updated"
 msgstr ""
 
 #: includes/class-price_history_view.php:16

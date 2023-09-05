@@ -24,7 +24,7 @@ class Sl147_class_settings {
 		$this->sl147_settings_errors   = 'sl147_settings_errors'.PRICE_HISTORY_TEXT_DOMAIN;
 		$this->sl147_section_id        = $this->sl147_get_section();
 		$this->sl147_fix_value_options = __( 'Fix the $value_options in the file settings/class-price_history_settings.php', 'price_history');
-		$this->required_key           = ['id_section', 'label_option', 'id_option', 'type_option'];
+		$this->required_key            = ['id_section', 'label_option', 'id_option', 'type_option'];
 		
 		add_action( 'admin_menu',            array( $this, 'sl147_add_submenu' ), 25 );
 		add_action( 'admin_init',            array( $this, 'sl147_register_options' ) );
@@ -84,9 +84,6 @@ class Sl147_class_settings {
      * @return void
      */ 
 	public function sl147_display_section($args ) :void{
-/*echo "<pre>";
-var_dump($args['callback']);
-echo "</pre>";*/
 		if ( ! empty($this->sl147_value_sections )) {
 				echo "<div class='sl147_PH_section'>" . $this->sl147_value_sections[$args['id']] . " </div>";
 		}
@@ -257,7 +254,7 @@ echo "</pre>";*/
 		) {
 			?>
 				<div class="notice notice-success is-dismissible">
-					<p><?php echo __( 'Settings updated', 'sl147_Top_Bar'  )?></p>
+					<p><?php echo __( 'Settings updated', 'price_history'  )?></p>
 				</div>
 			<?php
 		}
@@ -275,7 +272,6 @@ echo "</pre>";*/
 
     private function sl147_get_section(){
     	$tmp = [];
-    	//return array_count_values($this->sl147_value_options);
     	foreach ( $this->sl147_value_options as $key => $option ) {
     		if ( array_key_exists( 'id_section', $option )) {
     			$tmp[$option['id_section']] = 1;	
@@ -294,14 +290,14 @@ echo "</pre>";*/
 				if ($name_option == $option['id_option']) {
 					if ( $option['type_option'] == 'email') {
 						if ( ! is_email($val)) {
-							$input[$option['id_option']] = $this->sl147_add_error($name_option,$option['label_option'].' '.__('Invalid email address entered '.$err, 'sl147_Top_Bar' ). ": " .$val);
+							$input[$option['id_option']] = $this->sl147_add_error($name_option,$option['label_option'].' '.__('Invalid email address entered '.$err, 'price_history' ). ": " .$val);
 						}
 					}
 					if ( $option['validate'] ) {
 						foreach ( $option['validate'] as $key => $value ) {
 							if ( $key == 'check_color') {
 								if(!$this->sl147_check_color($val)) {
-									$input[$option['id_option']] = $this->sl147_add_error($name_option,$option['label_option'].' '.__('wrong color code'.$err,'sl147_Top_Bar' ). ": " .$val);
+									$input[$option['id_option']] = $this->sl147_add_error($name_option,$option['label_option'].' '.__('wrong color code'.$err,'price_history' ). ": " .$val);
 								}
 							}
 						}

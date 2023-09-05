@@ -17,7 +17,6 @@ class Sl147_price_history_view {
 		];
 		$this->arr_td            = ['product_name', 'category', 'product_price', 'date_change', 'type_price', 'user'];
 		$this->arr_td_style      = ['left', 'center', 'right', 'center', 'center', 'center'];
-		$this->arr_class         = ['text-left', 'text-center', 'text-right', 'text-center', 'text-center', 'text-center'];
 		$this->product_selected  = false;
 		$this->product_ID        = 1;
 		$this->product_name      = "";
@@ -25,6 +24,8 @@ class Sl147_price_history_view {
 		$this->all_products      = __( "All products", "price_history");
 		$this->sl147_settings_bd = 'sl147_bd_'.PRICE_HISTORY_TEXT_DOMAIN;
 		$this->sl147_category    = '';
+		$this->regular_price     = __( 'regular price',     'price_history' );
+		$this->promotional_price = __( 'promotional price', 'price_history' );
 	}
 
 	/**
@@ -38,10 +39,7 @@ class Sl147_price_history_view {
 	 */
 
 	private function sl147_PH_get_type_price(int $type_price) : string {
-
-		return (string) ($type_price == 1) 
-						? __( 'regular price',     'price_history' )
-						: __( 'promotional price', 'price_history' );
+		return (string) ($type_price == 1) ? $this->regular_price : $this->promotional_price;
 	}
 /**
  * get WP products object.
@@ -100,7 +98,6 @@ private function sl147_get_products() :object{
 	 */
 
 	private function sl147_PH_set_new_item(int $id, string $name) :array{
-
 		return (array) [
 							"ID"         => $id,
 							"post_title" => $name
@@ -143,7 +140,8 @@ private function sl147_get_products() :object{
 					'ID_product'    => $value->ID_product,
 					'product_name'  => $name,
 					'product_price' => $value->price_history,
-					'date_change'   => date('d-m-Y', strtotime($value->date_history)), 
+					'date_change'   => date('d-m-Y', strtotime($value->date_history)),
+					'date_format'   => $value->date_history, 
 					'type_price'    => $this->sl147_PH_get_type_price($value->type_price),
 					'user'          => $this->sl147_PH_get_name_user($value->user_change_price),
 				];
@@ -183,12 +181,9 @@ private function sl147_get_products() :object{
 		if ($product_ID > 1) $sql .= " WHERE ID_product=".$product_ID;	
 
 		$array_output = $this->sl147_PH_array_prepare($wpdb->get_results($sql));
-		$array_output = $this->sl147_PH_data_sort( $array_output, array(
+		return $this->sl147_PH_data_sort( $array_output, array(
 			'product_name' => 'desc',
-			'date_change'  => 'asc') );
-		//$array_output = $arr;
-
-		return (array) $array_output;		
+			'date_format'  => 'asc') );		
 	}
 
 	/**
@@ -308,7 +303,7 @@ function sl147_PH_data_sort( $array, $args ) { //= array('votes' => 'desc') ){
 				if ($key == 'sl147_option_color') $option_color = $option;
 				if ($key == 'sl147_option_font')  $font_size    = $option."px";
 				if ($key == 'sl147_option_category') {
-					$sl147_cat  = get_term_by( 'id', $option, 'product_cat');
+					$sl147_cat             = get_term_by( 'id', $option, 'product_cat');
 					$this->sl147_category  = $sl147_cat->name;
 				}
 			}
@@ -332,7 +327,6 @@ function sl147_PH_data_sort( $array, $args ) { //= array('votes' => 'desc') ){
 				$delete_err = 1;
 			}
 		}
-
 		require_once (PRICE_HISTORY_PLUGIN_DIR_PATH . 'admin/partials/price_history_view.php');
 	}
 }

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Price history\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-02 10:19+0000\n"
-"PO-Revision-Date: 2023-08-30 15:25+0000\n"
+"PO-Revision-Date: 2023-08-31 14:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -19,12 +19,9 @@ msgstr ""
 #. Description of the plugin
 msgid ""
 "<code><strong>Price history</strong></code>Price history for all products."
-msgstr ""
-"<code><strong>Historia cen</strong></code>Historia cen wszystkich produktów."
+msgstr "regularna cena"
 
-#: includes/class-price_history_view.php:25
-#: includes/class-price_history_view_order1.php:103
-#: includes/class-price_history_view_order1.php:171
+#: includes/class-price_history_view.php:24
 msgid "All products"
 msgstr "Wszystkie produkty"
 
@@ -35,7 +32,7 @@ msgstr "wystąpił błąd podczas usuwania ceny"
 #: includes/class-price_history_settings.php:16
 #: includes/class-price_history_view.php:12
 msgid "Category"
-msgstr "Kategoria"
+msgstr "Kategoria wyróżnienia"
 
 #: admin/partials/price_history_view.php:37
 msgid "Change history for all products"
@@ -65,7 +62,7 @@ msgstr "Ustawienie wyników historii cen"
 msgid "Date of change"
 msgstr "Data zmiany"
 
-#: includes/class-price_history_view.php:376
+#: includes/class-price_history_view.php:299
 msgid "Delete this price"
 msgstr "Usuń tę cenę"
 
@@ -88,7 +85,7 @@ msgstr "Rozmiar czcionki (px)"
 msgid "https://www.vaolab.pl"
 msgstr "https://www.vaolab.pl"
 
-#: includes/class-price_history_min_price.php:39
+#: includes/class-price_history_min_price.php:10
 msgid "Lowest price in the last 30 days"
 msgstr "Najniższa cena z ostatnich 30 dni"
 
@@ -136,21 +133,21 @@ msgstr "Produkt"
 msgid "Product price change history for"
 msgstr "Historia zmian cen produktów dla"
 
-#: includes/class-price_history_view.php:44
-#: includes/class-price_history_view_order1.php:31
+#: includes/class-price_history_view.php:28
 msgid "promotional price"
 msgstr "cena promocyjna"
 
-#: includes/class-price_history_view.php:43
-#: includes/class-price_history_view_order1.php:30
+#: includes/class-price_history_view.php:27
 msgid "regular price"
 msgstr "regularna cena"
 
 #: settings/sl147_class_settings.php:236 settings/sl147_class_settings.php:237
-#: settings/sl147_class_settings1.php:324
-#: settings/sl147_class_settings1.php:325
 msgid "Settings"
 msgstr "Ustawienia"
+
+#: settings/sl147_class_settings.php:260
+msgid "Settings updated"
+msgstr "Ustawienia zaktualizowane"
 
 #: includes/class-price_history_view.php:16
 msgid "User"
